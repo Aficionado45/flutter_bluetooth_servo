@@ -17,7 +17,7 @@ class BluetoothDeviceListEntry extends StatelessWidget {
       trailing: TextButton(
         child: Text(
           'Connect',
-          style: TextStyle(color: Color(0xffffb973)),
+          style: TextStyle(color: Color(0xff333333)),
         ),
         onPressed: onTap,
       ),

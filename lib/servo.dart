@@ -91,13 +91,13 @@ class _ChatPage extends State<ChatPage> {
                 (text) {
                   return text == '/shrug' ? '¯\\_(ツ)_/¯' : text;
                 }(_message.text.trim()),
-                style: TextStyle(color: Colors.white)),
+                style: TextStyle(color: Color(0xffffb973))),
             padding: EdgeInsets.all(12.0),
             margin: EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
             width: 222.0,
             decoration: BoxDecoration(
                 color:
-                    _message.whom == clientID ? Colors.blueAccent : Colors.grey,
+                    _message.whom == clientID ? Color(0xff333333) : Colors.grey,
                 borderRadius: BorderRadius.circular(7.0)),
           ),
         ],
