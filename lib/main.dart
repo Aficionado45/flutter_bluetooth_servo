@@ -13,10 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bluetooth Servo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       home: FutureBuilder(
         future: FlutterBluetoothSerial.instance.requestEnable(),
         builder: (context, future) {
@@ -50,7 +46,23 @@ class Home extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text('Select Device'),
+        backgroundColor: Colors.white,
+        title: Text(
+          "Braille Bluetooth",
+          style: TextStyle(color: Colors.black),
+        ),
+        toolbarHeight: MediaQuery.of(context).size.height / 10,
+        elevation: 0,
+        leadingWidth: MediaQuery.of(context).size.width / 4,
+        leading: Padding(
+          padding: const EdgeInsets.all(0),
+          child: Hero(
+            tag: 'logo',
+            child: Image(
+              image: AssetImage('images/braille.jpg'),
+            ),
+          ),
+        ),
       ),
       body: SelectBondedDevicePage(
         onCahtPage: (device1) {

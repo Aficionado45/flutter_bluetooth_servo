@@ -15,7 +15,10 @@ class BluetoothDeviceListEntry extends StatelessWidget {
       title: Text(device.name ?? "Unknown device"),
       subtitle: Text(device.address.toString()),
       trailing: TextButton(
-        child: Text('Connect'),
+        child: Text(
+          'Connect',
+          style: TextStyle(color: Color(0xffffb973)),
+        ),
         onPressed: onTap,
       ),
     );

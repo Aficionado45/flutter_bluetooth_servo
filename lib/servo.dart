@@ -109,11 +109,27 @@ class _ChatPage extends State<ChatPage> {
 
     return Scaffold(
       appBar: AppBar(
-          title: (isConnecting
-              ? Text('Connecting chat to ' + widget.server.name + '...')
-              : isConnected
-                  ? Text('Send Text To ' + widget.server.name)
-                  : Text('Chat log with ' + widget.server.name))),
+        backgroundColor: Colors.white,
+        toolbarHeight: MediaQuery.of(context).size.height / 10,
+        elevation: 0,
+        leadingWidth: MediaQuery.of(context).size.width / 4,
+        leading: Padding(
+          padding: const EdgeInsets.all(0),
+          child: Hero(
+            tag: 'logo',
+            child: Image(
+              image: AssetImage('images/braille.jpg'),
+            ),
+          ),
+        ),
+        title: (isConnecting
+            ? Text('Connecting chat to ' + widget.server.name + '...')
+            : isConnected
+                ? Text('Send Text To ' + widget.server.name)
+                : Text('Chat log with ' + widget.server.name)),
+        titleTextStyle: TextStyle(
+            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
